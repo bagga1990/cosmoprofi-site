@@ -1,0 +1,9 @@
+/* Страница «Налоговый вычет за обучение» — дополняет style.css и course.css */
+.warnbar a { color: var(--copper-dk); text-decoration: underline; text-underline-offset: .3rem; text-decoration-color: var(--copper-soft); }
+#who .warnbar { margin-top: var(--gap); }
+#how .dstep { min-height: 24rem; }
+#how .dstep h3 { font-size: 2rem; }
+.calc__head .example b { white-space: nowrap; }
+.fact b { white-space: nowrap; }
+@media (max-width: 1279px) { #how .fit { grid-template-columns: 1fr; } #how .dstep { min-height: 0; } #how .dstep h3 { margin-top: 1.2rem; } }
+@media (max-width: 767px) { .chero h1 { font-size: 3.4rem; } }

@@ -1,0 +1,47 @@
+/* Страница «Курсы по акции» — дополняет style.css и course.css */
+
+.ak-hero .chero__media > img { object-position: 60% 40%; }
+
+/* ---------- группы пакетов ---------- */
+.pkgs { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.pkgs + .head { margin-top: 6.4rem; }
+.pkg { display: flex; flex-direction: column; gap: 1.6rem; padding: 2.4rem; border-radius: var(--r); background: var(--white); }
+.pkg__top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.pkg__top .small { color: var(--ink-3); font-size: 1.05rem; }
+.pkg h3 { font-size: 2.2rem; letter-spacing: -0.025em; line-height: 1.15; }
+.pkg__list { list-style: none; margin: 0; padding: 0; counter-reset: p; display: flex; flex-direction: column; }
+.pkg__list > li { counter-increment: p; display: grid; grid-template-columns: 2.8rem 1fr; gap: .2rem 1rem; padding: 1.2rem 0; border-top: 1px solid var(--line); }
+.pkg__list > li::before { content: counter(p, decimal-leading-zero); grid-row: 1 / span 4; font-size: 1.05rem; color: var(--ink-3); padding-top: .2rem; }
+.pkg__name { font-weight: 500; font-size: 1.35rem; line-height: 1.35; }
+a.pkg__name { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .3rem; transition: text-decoration-color .2s; }
+a.pkg__name:hover { text-decoration-color: var(--ink); }
+.pkg__list p { font-size: 1.15rem; color: var(--ink-2); line-height: 1.45; }
+.pkg__meta { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .6rem; }
+.pkg__meta span { font-size: 1rem; color: var(--ink-2); padding: .3rem .9rem; border-radius: 99rem; background: var(--tint-stone); white-space: nowrap; }
+.pkg__meta span.med { background: var(--tint-rose); color: var(--copper-dk); }
+.pkg__opts { list-style: none; margin: .4rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .2rem; }
+.pkg__opts li { font-size: 1.15rem; color: var(--ink-2); display: flex; gap: .8rem; }
+.pkg__opts li::before { content: "—"; color: var(--ink-3); }
+.pkg__foot { margin-top: auto; display: flex; flex-direction: column; gap: 1.2rem; padding-top: 1.6rem; border-top: 1px solid var(--line); }
+.pkg__price { display: flex; align-items: baseline; flex-wrap: wrap; gap: .4rem 1.2rem; }
+.pkg__price b { font-family: var(--f-display); font-weight: 500; font-size: 3.4rem; letter-spacing: -0.04em; line-height: 1; }
+.pkg__price s { font-size: 1.4rem; color: var(--ink-3); }
+.pkg__note { font-size: 1.1rem; color: var(--ink-2); }
+.pkg__foot .btn { justify-content: center; }
+.pkg--info { background: var(--tint-rose); }
+.pkg--info p { font-size: 1.25rem; color: var(--ink-2); }
+.pkg--info .pkg__foot { border-top-color: #EBD6CA; }
+.pkg--cta { background: var(--tint-cream); }
+.pkg--cta p { font-size: 1.25rem; color: var(--ink-2); }
+.pkg--cta .pkg__foot { border-top-color: #EDE4D6; }
+@media (max-width: 1279px) { .pkgs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) { .pkgs { grid-template-columns: 1fr; } .pkg { padding: 2rem; } .pkg__price b { font-size: 3rem; } .pkgs + .head { margin-top: 4.8rem; } }
+
+/* ---------- шаги записи ---------- */
+.steps4 { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
+@media (max-width: 1279px) { .steps4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) { .steps4 { grid-template-columns: 1fr; } }
+
+/* форма: варианты без переполнения на телефоне */
+@media (max-width: 767px) { .form .opts label { height: auto; min-height: 3.2rem; padding-block: .6rem; } }
+.head[id], section[id] { scroll-margin-top: 7.2rem; }

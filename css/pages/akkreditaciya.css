@@ -1,0 +1,59 @@
+/* Страница «Партнёрская программа / аккредитация» — дополняет style.css и course.css */
+
+/* что получает партнёр — три колонки списка */
+.akgets { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.akgets .li { min-height: 9.6rem; }
+
+/* виды документов */
+.akdocs { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); margin-top: var(--gap); }
+.akdoc { display: flex; flex-direction: column; gap: .8rem; padding: 2rem; border-radius: var(--r); background: var(--white); min-height: 17rem; }
+.akdoc .small { color: var(--ink-3); font-size: 1.05rem; }
+.akdoc h3 { font-size: 1.9rem; letter-spacing: -0.02em; line-height: 1.2; margin-top: auto; }
+.akdoc p { font-size: 1.2rem; color: var(--ink-2); }
+
+/* тарифы */
+.tariffs { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.tariff { display: flex; flex-direction: column; gap: 1.4rem; padding: 2.4rem; border-radius: var(--r); background: var(--white); }
+.tariff__top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.tariff h3 { font-size: 2.2rem; letter-spacing: -0.025em; line-height: 1.15; }
+.tariff .price b { font-size: 4.4rem; }
+.tariff ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.tariff li { display: flex; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line); font-size: 1.2rem; line-height: 1.45; }
+.tariff li svg { flex: none; width: 1.4rem; height: 1.4rem; color: var(--copper); margin-top: .2rem; }
+.tariff .btn { margin-top: auto; justify-content: center; height: 4.8rem; }
+.tariff__start { font-size: 1.1rem; color: var(--ink-3); }
+.tariff--mid { background: var(--tint-rose); }
+.tariff--top { background: var(--ink); color: #fff; }
+.tariff--top .price span, .tariff--top .tariff__start { color: #BDB6AD; }
+.tariff--top li { border-top-color: #34302B; }
+.tariff--top li svg { color: var(--copper-soft); }
+.tariff--top .pill { background: #2E2B27; color: #fff; box-shadow: none; }
+.tariffs__note { grid-column: 1 / -1; margin-top: 1.6rem; font-size: 1.1rem; color: var(--ink-3); max-width: 90rem; }
+
+/* ступень для будущих преподавателей */
+.akstep { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gap); }
+.akstep__txt { grid-column: span 6; display: flex; flex-direction: column; gap: 1.4rem; padding: 2.4rem; border-radius: var(--r); background: var(--tint-cream); }
+.akstep__txt h3 { font-size: 2.6rem; letter-spacing: -0.03em; line-height: 1.12; }
+.akstep__txt p { font-size: 1.25rem; color: var(--ink-2); max-width: 52rem; }
+.akstep__txt .link { margin-top: auto; }
+.akstep .card { grid-column: span 3; animation: none; }
+
+@media (max-width: 1279px) {
+  .akgets, .akdocs, .tariffs { grid-template-columns: 1fr 1fr; }
+  .tariff--top { grid-column: 1 / -1; }
+  .akstep__txt { grid-column: 1 / -1; }
+  .akstep .card { grid-column: span 6; }
+}
+@media (max-width: 767px) {
+  .akgets, .akdocs, .tariffs { grid-template-columns: 1fr; }
+  .akgets .li { min-height: 0; }
+  .akdoc { min-height: 0; }
+  .akdoc h3 { margin-top: .8rem; }
+  .tariff { padding: 2rem; }
+  .tariff .price b { font-size: 3.6rem; }
+  .akstep__txt { padding: 2rem; }
+  .akstep .card { grid-column: 1 / -1; }
+}
+
+/* этапы на телефоне — без пустых карточек */
+@media (max-width: 767px) { .steps6 .dstep { min-height: 0; } .steps6 .dstep h3 { margin-top: 1.2rem; } }

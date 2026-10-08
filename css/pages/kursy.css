@@ -1,0 +1,56 @@
+/* Страница каталога /kursy/ */
+
+/* Первый экран — короткий, без фото */
+.chero--cat { padding-bottom: 0; }
+.chero--cat .chero__text { grid-column: 1 / span 7; gap: 2rem; padding-bottom: 0; }
+.chero--cat .facts { grid-column: 8 / -1; align-self: end; margin: 0; }
+.chero--cat .fact b { font-size: 2.4rem; }
+
+/* Поиск в панели фильтров */
+.csearch { position: relative; display: flex; align-items: center; margin-left: auto; flex: 0 1 30rem; min-width: 22rem; }
+.csearch svg { position: absolute; left: 1.3rem; width: 1.4rem; height: 1.4rem; color: var(--ink-3); pointer-events: none; }
+.csearch input { width: 100%; height: 3.6rem; padding: 0 3.6rem 0 3.6rem; border: 0; border-radius: 99rem; background: var(--tint-stone); font-size: 1.2rem; outline: none; box-shadow: inset 0 0 0 1px transparent; transition: box-shadow .2s, background .2s; -webkit-appearance: none; appearance: none; }
+.csearch input::placeholder { color: var(--ink-3); }
+.csearch input:focus { background: var(--white); box-shadow: inset 0 0 0 1px var(--ink-3); }
+.csearch input::-webkit-search-cancel-button { display: none; }
+.csearch__x { position: absolute; right: .5rem; width: 2.6rem; height: 2.6rem; border: 0; border-radius: 50%; background: var(--white); cursor: pointer; font-size: 1.5rem; line-height: 1; color: var(--ink-2); display: none; }
+.csearch.has-q .csearch__x { display: grid; place-items: center; }
+
+/* Строка над карточками: счётчик и сортировка */
+.cbar { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 1.2rem 2.4rem; flex-wrap: wrap; padding: 1.2rem .4rem 1.8rem; }
+.cbar__count { font-size: 1.3rem; color: var(--ink-2); }
+.cbar__count b { color: var(--ink); font-weight: 500; }
+.cbar__reset { border: 0; background: none; cursor: pointer; margin-left: 1rem; font-size: 1.2rem; color: var(--copper-dk); text-decoration: underline; text-underline-offset: .3rem; padding: 0; }
+.cbar__reset[hidden] { display: none; }
+.cbar .seg { background: var(--white); }
+.cbar .seg button[aria-pressed="true"] { background: var(--tint-stone); box-shadow: none; }
+
+/* Пустое состояние */
+#catEmpty .btn { margin-top: 2rem; }
+
+/* «Не нашли курс?» */
+.cat-alt .duo .tcard { grid-column: auto; align-items: stretch; }
+.cat-alt .duo .tcard img { height: 100%; aspect-ratio: auto; min-height: 24rem; }
+.cat-alt .tcard__txt { padding-block: 1.6rem; }
+.cat-alt .tcard__txt h3 { font-size: 2.4rem; line-height: 1.15; }
+.cat-alt .tcard .pills { display: flex; flex-wrap: wrap; gap: .4rem; }
+.cat-alt .tcard .link { margin-top: .8rem; }
+
+@media (max-width: 1279px) {
+  .chero--cat .chero__text, .chero--cat .facts { grid-column: 1 / -1; }
+  .chero--cat .facts { margin-top: 2.4rem; }
+  .csearch { flex: 1 1 100%; margin-left: 0; }
+}
+@media (max-width: 767px) {
+  .cat-alt .duo .tcard img { height: auto; aspect-ratio: 4 / 3; min-height: 0; }
+  .cat-alt .tcard__txt { padding-block: 0; }
+  .chero--cat .facts--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .chero--cat .fact { padding: 1.2rem 1rem 1.3rem; }
+  .chero--cat .fact b { font-size: 1.9rem; }
+  .chero--cat .fact span { font-size: 1rem; }
+  .csearch { min-width: 0; }
+  .cbar { padding-top: .8rem; }
+  .cbar .seg { width: 100%; grid-template-columns: repeat(3, 1fr); }
+  .cbar .seg button { padding: 0 .6rem; }
+}
+#catEmpty h3 { line-height: 1.2; }

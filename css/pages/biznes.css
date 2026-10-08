@@ -1,0 +1,25 @@
+/* Страница «Красивый бизнес в косметологии» — дополняет style.css и course.css */
+
+/* пример расчёта экономики кабинета */
+.econ { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--gap); }
+.econ__main { grid-column: span 7; display: flex; flex-direction: column; gap: 1.6rem; padding: 2.4rem; border-radius: var(--r); background: var(--white); }
+.econ__main h3 { font-size: 2.2rem; letter-spacing: -0.025em; line-height: 1.15; }
+.econ__main > p { font-size: 1.25rem; color: var(--ink-2); max-width: 60rem; }
+.econ__rows { display: flex; flex-direction: column; }
+.econ__row { display: grid; grid-template-columns: 3.2rem 1fr auto; gap: 1.2rem; align-items: baseline; padding: 1.2rem 0; border-top: 1px solid var(--line); font-size: 1.3rem; }
+.econ__row i { font-style: normal; font-family: var(--f-display); font-size: 1.6rem; color: var(--copper); text-align: center; }
+.econ__row span:last-child { font-size: 1.1rem; color: var(--ink-3); text-align: right; }
+.econ__row--sum { border-top: 1px solid var(--ink); font-weight: 500; }
+.econ__side { grid-column: span 5; display: flex; flex-direction: column; gap: 1.4rem; padding: 2.4rem; border-radius: var(--r); background: var(--tint-cream); }
+.econ__side h3 { font-size: 2.2rem; letter-spacing: -0.025em; line-height: 1.15; }
+.econ__side p { font-size: 1.25rem; color: var(--ink-2); }
+.econ__side .note { margin-top: auto; padding-top: 1.4rem; border-top: 1px solid var(--line); font-size: 1.1rem; color: var(--ink-3); }
+@media (max-width: 1279px) { .econ__main, .econ__side { grid-column: 1 / -1; } }
+@media (max-width: 767px) {
+  .econ__main, .econ__side { padding: 2rem; }
+  .econ__row { grid-template-columns: 2.4rem 1fr; }
+  .econ__row span:last-child { grid-column: 2; text-align: left; }
+}
+
+/* одиночная карточка преподавателя */
+.tsolo { grid-column: 1 / -1; }

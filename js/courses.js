@@ -13,7 +13,7 @@ window.COURSES = [
   { t: "Криолиполиз", d: "Выбор зоны, аппликатора и времени воздействия. Безопасный протокол.", dir: "body", format: "ind", level: "spec", hours: "12 ч", price: null, img: "c09.jpg" },
   // Очно — группы
   { t: "Косметик-эстетист по лицу в мини-группе", d: "Профессия с нуля: уход, чистки, массаж, пилинги. Процедуры на моделях.", dir: "esth", format: "ochno", level: "zero", hours: "320 ак. ч", price: 45000, img: "c04.jpg" },
-  { t: "Сестринское дело в косметологии", d: "Для медсестёр, фельдшеров и акушерок. Аппаратные и инъекционные методики.", dir: "med", format: "ochno", level: "med", hours: "288 / 504 ак. ч", price: 90000, img: "c03.jpg" },
+  { t: "Сестринское дело в косметологии", url: "kursy/sestrinskoe-delo-v-kosmetologii-ochno/", d: "Для медсестёр, фельдшеров и акушерок: манипуляции, мезотерапия, пилинги. Практика на моделях, диплом.", dir: "med", format: "ochno", level: "med", hours: "504 ак. ч", price: 75000, img: "c36-sestrinskoe-ochno.jpg" },
   { t: "Косметолог-инъекционист", d: "Ботулинотерапия, контурная пластика, биоревитализация. Работа на моделях.", dir: "inj", format: "ochno", level: "med", hours: "576 ак. ч", price: 110000, from: true, img: "c01.jpg" },
   { t: "Архитектор лица: канюльная техника", d: "Повышение квалификации для инъекционистов: безопасная работа канюлей.", dir: "inj", format: "ochno", level: "med", hours: "72 ак. ч", price: 75000, img: "c17.jpg" },
   { t: "Лечение гипергидроза ботулотоксином", d: "Диагностика, разметка, расчёт дозировки. Процедура на модели.", dir: "inj", format: "ochno", level: "med", hours: "72 ак. ч", price: null, img: "c12.jpg" },
@@ -23,7 +23,7 @@ window.COURSES = [
   { t: "Косметик-эстетист по лицу", d: "Кожа, уход, чистки, массаж, основы аппаратных методов. В своём темпе.", dir: "esth", format: "dist", level: "zero", hours: "320 ак. ч", price: 22800, img: "c08.jpg" },
   { t: "Косметик-эстетист по телу", d: "Уход за телом, массаж, программы коррекции фигуры для SPA и кабинета тела.", dir: "esth", format: "dist", level: "zero", hours: "504 ак. ч", price: 22800, img: "c24.jpg" },
   { t: "Лазерные технологии и IPL-терапия", url: "kursy/lazernye-tehnologii-i-ipl-distancionno/", d: "Повышение квалификации для врачей: лазеры, IPL и фракционный CO2-лазер. Удостоверение, ФИС ФРДО.", dir: "laser", format: "dist", level: "med", hours: "50 ак. ч", price: 22800, img: "c30-laser-dist.jpg" },
-  { t: "Аппаратные методы коррекции фигуры", d: "Кавитация, криолиполиз, LPG, прессотерапия — принципы и протоколы.", dir: "body", format: "dist", level: "spec", hours: "216 ак. ч", price: 22800, img: "c14.jpg" },
+  { t: "Аппаратные методики по коррекции фигуры", url: "kursy/apparatnye-metodiki-korrekcii-figury-distancionno/", d: "Кавитация, криолиполиз, RF, вакуумный массаж, прессотерапия. Удостоверение, ФИС ФРДО.", dir: "body", format: "dist", level: "med", hours: "50 ак. ч", price: 22800, img: "c35-figura-dist.jpg" },
   { t: "Младшая медицинская сестра", d: "Уход за пациентами, санитарные нормы, первая помощь. С нуля.", dir: "med", format: "dist", level: "zero", hours: "300 ак. ч", price: 22800, img: "c25.jpg" },
   { t: "Наращивание ресниц", d: "Техники наращивания, подбор материалов, коррекция и безопасное снятие.", dir: "beauty", format: "dist", level: "zero", hours: "108 ак. ч", price: null, img: "c27-lashes.jpg" },
   { t: "Маникюр, педикюр и наращивание", d: "Гигиена, покрытие, наращивание и дизайн. Анатомия ногтя и санитарные нормы.", dir: "beauty", format: "dist", level: "zero", hours: "108 ак. ч", price: null, img: "c26-nails.jpg" },

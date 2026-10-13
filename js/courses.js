@@ -25,8 +25,6 @@ window.COURSES = [
   { t: "Лазерные технологии и IPL-терапия", url: "kursy/lazernye-tehnologii-i-ipl-distancionno/", d: "Повышение квалификации для врачей: лазеры, IPL и фракционный CO2-лазер. Удостоверение, ФИС ФРДО.", dir: "laser", format: "dist", level: "med", hours: "50 ак. ч", price: 22800, img: "c30-laser-dist.jpg" },
   { t: "Аппаратные методики по коррекции фигуры", url: "kursy/apparatnye-metodiki-korrekcii-figury-distancionno/", d: "Кавитация, криолиполиз, RF, вакуумный массаж, прессотерапия. Удостоверение, ФИС ФРДО.", dir: "body", format: "dist", level: "med", hours: "50 ак. ч", price: 22800, img: "c35-figura-dist.jpg" },
   { t: "Младшая медицинская сестра", url: "kursy/mladshaya-medicinskaya-sestra-distancionno/", d: "Уход за пациентами, санитарные нормы, первая помощь. С нуля.", dir: "med", format: "dist", level: "zero", hours: "304 ак. ч", price: 22800, img: "c25.jpg" },
-  { t: "Наращивание ресниц", url: "kursy/narashchivanie-resnic-distancionno/", d: "Техники наращивания, подбор материалов, коррекция и безопасное снятие.", dir: "beauty", format: "dist", level: "zero", hours: "108 ак. ч", price: null, img: "c27-lashes.jpg" },
-  { t: "Маникюр, педикюр и наращивание", url: "kursy/master-manikyura-pedikyura-distancionno/", d: "Гигиена, покрытие, наращивание и дизайн. Анатомия ногтя и санитарные нормы.", dir: "beauty", format: "dist", level: "zero", hours: "108 ак. ч", price: null, img: "c26-nails.jpg" },
   { t: "Красивый бизнес в косметологии", url: "kursy/krasivyj-biznes/", d: "Как открыть кабинет: документы, лицензия, финансы, команда, маркетинг.", dir: "biz", format: "dist", level: "zero", hours: "250 ак. ч", price: 52000, img: "c31-biznes-julia.jpg" },
   { t: "Тренер в косметологии", url: "kursy/trener-v-kosmetologii/", d: "Для практиков, которые хотят преподавать: программа, занятие, практика.", dir: "biz", format: "dist", level: "spec", hours: "250 ак. ч", price: 52000, img: "c28-trainer.jpg" }
 ];
@@ -38,6 +36,6 @@ window.DIRS = {
   esth: "Эстетика",
   inj: "Инъекции",
   med: "Медицина",
-  beauty: "Перманент, брови, ногти",
+  beauty: "Перманент и брови",
   biz: "Бизнес и преподавание"
 };

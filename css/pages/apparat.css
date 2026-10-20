@@ -70,3 +70,9 @@
 /* ---------- форма: дополнительные поля ---------- */
 .form .opts label { white-space: nowrap; }
 @media (max-width: 767px) { .form .opts label { white-space: normal; height: auto; min-height: 3.2rem; padding-block: .6rem; } }
+
+/* ---------- список инструктажей и форматы ---------- */
+.ilists { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.ilist h3 { margin-top: .8rem; }
+.isum { font-family: var(--f-display); font-size: 3.6rem; letter-spacing: -0.03em; line-height: 1; }
+@media (max-width: 1279px) { .ilists { grid-template-columns: minmax(0, 1fr); } }

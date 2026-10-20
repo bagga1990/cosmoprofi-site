@@ -1,6 +1,6 @@
 /* Каталог курсов /kursy/: фильтры, поиск, сортировка, синхронизация с URL.
    Данные — window.CATALOG и window.CATALOG_DIRS из catalog-data.js.
-   Параметры URL: ?format=ochno|ind|dist  ?level=zero|spec|med  ?dir=face,laser  ?q=текст  ?sort=asc|desc
+   Параметры URL: ?format=ochno|dist  ?level=zero|spec|med  ?dir=face,laser  ?q=текст  ?sort=asc|desc
    Атрибуты разметки намеренно отличаются от главной (data-cf вместо data-filter, #catCards вместо #cards),
    чтобы main.js не перехватывал элементы каталога. */
 (function () {
@@ -12,7 +12,7 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var TOTAL = C.length;
   var LEVEL_ALLOWS = { all: ["zero", "spec", "med"], zero: ["zero"], spec: ["zero", "spec"], med: ["zero", "spec", "med"] };
-  var FMT = { ochno: "Очно", ind: "Индивидуально", dist: "Дистанционно" };
+  var FMT = { ochno: "Очно", dist: "Дистанционно" };
   var LVL = { zero: "без требований", spec: "высшее или СПО", med: "медобразование" };
   var SORTS = ["default", "asc", "desc"];
   var state = { level: "all", format: "all", dirs: [], q: "", sort: "default" };

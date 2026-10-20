@@ -60,7 +60,7 @@
   var accs = document.querySelectorAll(".acc");
   var fmtImgs = document.querySelectorAll("#fmtMedia img");
   var fmtLabel = document.getElementById("fmtLabel");
-  var LABELS = ["01 · Очно", "02 · Индивидуально", "03 · Дистанционно", "04 · На вашем аппарате"];
+  var LABELS = ["01 · Очно", "02 · Дистанционно", "03 · На вашем аппарате"];
   accs.forEach(function (acc) {
     acc.querySelector(".acc__btn").addEventListener("click", function () {
       var i = +acc.dataset.i;
@@ -78,13 +78,17 @@
   var C = window.COURSES || [], D = window.DIRS || {};
   var state = { level: "all", format: "all", dirs: [] };
   var LEVEL_ALLOWS = { all: ["zero", "spec", "med"], zero: ["zero"], spec: ["zero", "spec"], med: ["zero", "spec", "med"] };
-  var FMT = { ochno: "Очно", ind: "Индивидуально", dist: "Дистанционно" };
+  var FMT = { ochno: "Очно", dist: "Дистанционно" };
   var LVL = { zero: "без требований", spec: "высшее или СПО", med: "медобразование" };
   var cards = document.getElementById("cards");
   var chips = document.getElementById("dirChips");
   var empty = document.getElementById("empty");
   var countNote = document.getElementById("countNote");
 
+  function plural(n, one, few, many) {
+    var a = n % 10, b = n % 100;
+    return a === 1 && b !== 11 ? one : a >= 2 && a <= 4 && (b < 12 || b > 14) ? few : many;
+  }
   function rub(n) { return n.toLocaleString("ru-RU").replace(/ |,/g, " ") + " ₽"; }
   function matches(c, ignoreDir) {
     if (LEVEL_ALLOWS[state.level].indexOf(c.level) < 0) return false;
@@ -121,7 +125,7 @@
         '<div class="card__foot"><span class="card__price tnum">' + price + '</span><span class="card__lvl' + (c.level === "med" ? " med" : "") + '">' + LVL[c.level] + "</span></div></div></a>";
     }).join("");
     empty.classList.toggle("is-on", list.length === 0);
-    countNote.textContent = "Показано " + list.length + " из 61 программы";
+    countNote.textContent = "Показано " + list.length + " из " + C.length + " " + plural(C.length, "курса", "курсов", "курсов");
     renderChips();
   }
   function setSeg(name, v) {

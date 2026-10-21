@@ -149,6 +149,21 @@
   });
   if (cards) render();
 
+  /* ---------- видеоотзывы: листание и один ролик за раз ---------- */
+  var vrevs = document.getElementById("vrevs");
+  if (vrevs) {
+    document.querySelectorAll("[data-vrev]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var card = vrevs.querySelector(".vrev");
+        var step = card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(vrevs).columnGap || 0) : 300;
+        vrevs.scrollBy({ left: +b.dataset.vrev * step * 2, behavior: reduce ? "auto" : "smooth" });
+      });
+    });
+    vrevs.addEventListener("play", function (e) {
+      vrevs.querySelectorAll("video").forEach(function (v) { if (v !== e.target) v.pause(); });
+    }, true);
+  }
+
   /* ---------- форма ----------
      Отправка пока не подключена: при загрузке на хостинг указать обработчик
      (CRM, почта или Telegram-бот) в функции send(). */

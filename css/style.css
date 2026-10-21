@@ -433,3 +433,17 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .ishop { min-height: 48rem; }
 .ishop > img { width: 100%; height: 0; min-height: 100%; object-fit: cover; }
 @media (max-width: 1023px) { .ishop { grid-template-columns: minmax(0, 1fr); min-height: 0; } .ishop__txt { padding: 2.4rem 2rem; } .ishop > img { height: 30rem; min-height: 0; } }
+
+/* ---------- видеоотзывы ---------- */
+.vrev__nav { display: flex; gap: .6rem; }
+.vrev__btn { width: 4.4rem; height: 4.4rem; border: 0; border-radius: 50%; background: var(--white); color: var(--ink); display: grid; place-items: center; cursor: pointer; transition: background .25s, color .25s; }
+.vrev__btn svg { width: 1.3rem; height: 1.3rem; }
+.vrev__btn[data-vrev="-1"] svg { transform: rotate(180deg); }
+.vrev__btn:hover { background: var(--ink); color: #fff; }
+.vrevs { grid-column: 1 / -1; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 4 * var(--gap)) / 5); gap: var(--gap); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+.vrevs::-webkit-scrollbar { display: none; }
+.vrev { margin: 0; scroll-snap-align: start; display: flex; flex-direction: column; gap: .8rem; }
+.vrev video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: var(--r); background: var(--tint-sand); }
+.vrev figcaption { display: flex; justify-content: space-between; gap: 1rem; padding-inline: .4rem; font-size: 1.15rem; color: var(--ink-2); }
+@media (max-width: 1279px) { .vrevs { grid-auto-columns: calc((100% - 2 * var(--gap)) / 3); } }
+@media (max-width: 767px) { .vrevs { grid-auto-columns: 72%; } .vrev__nav { display: none; } }

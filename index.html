@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#F6F5F2">
 <link rel="preload" href="assets/fonts/WixMadeforDisplay-500-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/img/hero-julia.jpg" as="image">
-<link rel="stylesheet" href="css/fonts.css?v=63">
-<link rel="stylesheet" href="css/style.css?v=63">
+<link rel="stylesheet" href="css/fonts.css?v=64">
+<link rel="stylesheet" href="css/style.css?v=64">
 <link rel="icon" href="assets/img/logo-gold.svg" type="image/svg+xml">
 </head>
 <body>
@@ -362,14 +362,29 @@
 <!-- 10. Отзывы -->
 <section class="section section--tight" id="reviews">
   <div class="wrap grid">
-    <div class="reviews__head rv">
-      <p class="kicker">Отзывы</p>
-      <h2 class="h2">Что говорят <span class="soft">выпускники</span></h2>
-      <p class="lead">Отзывы с названием курса и датой обучения.</p>
+    <div class="head rv">
+      <div class="head__l">
+        <p class="kicker">Отзывы</p>
+        <h2 class="h2">Что говорят <span class="soft">выпускницы</span></h2>
+      </div>
+      <div class="vrev__nav">
+        <button class="vrev__btn" type="button" data-vrev="-1" aria-label="Предыдущие отзывы"><svg><use href="#i-arr"/></svg></button>
+        <button class="vrev__btn" type="button" data-vrev="1" aria-label="Следующие отзывы"><svg><use href="#i-arr"/></svg></button>
+      </div>
     </div>
-    <div class="reviews__list">
-      <article class="review rv"><div class="review__top"><i></i><span class="pill">курс · год</span></div><p class="review__q">Место для реального отзыва выпускника: что было полезно на курсе и что изменилось после.</p><p class="review__who"><b>Имя выпускника</b>CosmoProfi, месяц и год</p></article>
-      <article class="review rv rv-d1"><div class="review__top"><i></i><span class="pill">курс · год</span></div><p class="review__q">Место для реального отзыва выпускника: что было полезно на курсе и что изменилось после.</p><p class="review__who"><b>Имя выпускника</b>CosmoProfi, месяц и год</p></article>
+    <div class="vrevs" id="vrevs">
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/Ra0QdCdh-OGwQbt0p.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 1"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:58</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/hdfyzRHn-OGwQbt0p.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 2"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">1:09</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/RN35PtwV-OGwQbt0p.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 3"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:53</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/ku8MIgfg-036Cww5X.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 4"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:47</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/iC74BZoX-OGwQbt0p.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 5"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:50</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/5gNXO2yJ-OGwQbt0p.mp4#t=1" preload="metadata" playsinline controls style="object-position:30% 50%" aria-label="Видеоотзыв выпускницы 6"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:42</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/85Mssz4d-036Cww5X.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 7"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:27</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/F1lHndeC-OGwQbt0p.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 8"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:38</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/92E3tz5a-036Cww5X.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 9"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:27</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/RaPFGgIS-OGwQbt0p.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 10"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">1:07</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/Hsy0193Y-9d07sW5X.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 11"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:48</span></figcaption></figure>
+      <figure class="vrev"><video src="https://cdnv.boomstream.com/balancer/PQ6uxkqf-9d07sW5X.mp4#t=1" preload="metadata" playsinline controls aria-label="Видеоотзыв выпускницы 12"></video><figcaption><span>Выпускница CosmoProfi</span><span class="tnum">0:25</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -458,7 +473,7 @@
   <a class="cta" href="#final">Подобрать курс</a>
 </nav>
 
-<script src="js/courses.js?v=63"></script>
-<script src="js/main.js?v=63"></script>
+<script src="js/courses.js?v=64"></script>
+<script src="js/main.js?v=64"></script>
 </body>
 </html>

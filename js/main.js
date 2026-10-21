@@ -178,9 +178,10 @@
       f.classList.toggle("is-bad", bad);
       if (bad) ok = false;
     });
-    var pd = form.elements.pd;
-    pd.closest("label").classList.toggle("is-bad", !pd.checked);
-    if (!pd.checked) ok = false;
+    form.querySelectorAll('input[type="checkbox"][required]').forEach(function (c) {
+      c.closest("label").classList.toggle("is-bad", !c.checked);
+      if (!c.checked) ok = false;
+    });
     if (!ok) return;
     send(Object.fromEntries(new FormData(form))).then(function () {
       document.getElementById("formOk").classList.add("is-on");

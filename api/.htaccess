@@ -1,0 +1,5 @@
+# Закрыть настройки и копии заявок от доступа из браузера
+<FilesMatch "^(config\.php|config\.example\.php)$">
+  Require all denied
+</FilesMatch>
+Options -Indexes

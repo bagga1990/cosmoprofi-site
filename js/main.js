@@ -165,29 +165,76 @@
   }
 
   /* ---------- форма ----------
-     Отправка пока не подключена: при загрузке на хостинг указать обработчик
-     (CRM, почта или Telegram-бот) в функции send(). */
+     Заявка уходит в api/lead.php на хостинге: тот сохраняет копию и пересылает её в Telegram и на почту. */
   var form = document.getElementById("leadForm");
-  function send(data) { return Promise.resolve(data); }
-  if (form) form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var ok = true;
-    ["name", "phone"].forEach(function (n) {
-      var f = form.elements[n];
-      var bad = !f.value.trim() || (n === "phone" && f.value.replace(/\D/g, "").length < 10);
-      f.classList.toggle("is-bad", bad);
-      if (bad) ok = false;
+  var API = (document.currentScript && document.currentScript.src || "js/main.js").replace(/js\/main\.js.*$/, "") + "api/lead.php";
+  var SKIP = ["name", "phone", "privacy", "pd", "ads", "website"];
+  var HIDDEN = { course: "Курс", page: "Страница" };
+  function text(el) { return el ? el.textContent.replace(/\s+/g, " ").trim() : ""; }
+  function collect(f) {
+    var out = [], seen = {};
+    f.querySelectorAll("input, select, textarea").forEach(function (el) {
+      if (!el.name || seen[el.name] || SKIP.indexOf(el.name) >= 0 || el.type === "checkbox") return;
+      if (el.type === "radio") {
+        seen[el.name] = 1;
+        var c = f.querySelector('input[name="' + el.name + '"]:checked');
+        if (c) out.push([text(el.closest("fieldset") && el.closest("fieldset").querySelector("legend")) || el.name, text(f.querySelector('label[for="' + c.id + '"]')) || c.value]);
+        return;
+      }
+      if (!el.value.trim()) return;
+      out.push([el.type === "hidden" ? (HIDDEN[el.name] || el.name) : (text(f.querySelector('label[for="' + el.id + '"]')) || el.name), el.value.trim()]);
     });
-    form.querySelectorAll('input[type="checkbox"][required]').forEach(function (c) {
-      c.closest("label").classList.toggle("is-bad", !c.checked);
-      if (!c.checked) ok = false;
+    return out;
+  }
+  function send(f) {
+    var el = f.elements;
+    /* предпросмотр на GitHub Pages: PHP там нет, заявка не отправляется */
+    if (/\.github\.io$/.test(location.hostname)) return Promise.resolve();
+    return fetch(API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: el.name.value.trim(), phone: el.phone.value.trim(), fields: collect(f),
+        page: document.title.split(" — ")[0].split(" | ")[0], url: location.href.split("#")[0],
+        consent_privacy: !!(el.privacy && el.privacy.checked), consent_pd: !!(el.pd && el.pd.checked),
+        consent_ads: !!(el.ads && el.ads.checked), website: el.website ? el.website.value : ""
+      })
+    }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j.ok) throw new Error(j.error || r.status); }); });
+  }
+  if (form) {
+    var hp = document.createElement("input");
+    hp.name = "website"; hp.tabIndex = -1; hp.autocomplete = "off"; hp.setAttribute("aria-hidden", "true");
+    hp.style.cssText = "position:absolute;left:-9999px;width:1px;height:1px;opacity:0";
+    form.appendChild(hp);
+    var err = document.createElement("p");
+    err.className = "form__err"; err.setAttribute("role", "alert");
+    err.innerHTML = 'Не получилось отправить заявку. Позвоните <a href="tel:+79161751032">+7 916 175-10-32</a> или напишите в <a href="https://wa.me/79161751032" target="_blank" rel="noopener">WhatsApp</a>.';
+    document.getElementById("formOk").after(err);
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var ok = true;
+      ["name", "phone"].forEach(function (n) {
+        var f = form.elements[n];
+        var bad = !f.value.trim() || (n === "phone" && f.value.replace(/\D/g, "").length < 10);
+        f.classList.toggle("is-bad", bad);
+        if (bad) ok = false;
+      });
+      form.querySelectorAll('input[type="checkbox"][required]').forEach(function (c) {
+        c.closest("label").classList.toggle("is-bad", !c.checked);
+        if (!c.checked) ok = false;
+      });
+      if (!ok) return;
+      var btn = form.querySelector("[type=submit]");
+      btn.disabled = true;
+      err.classList.remove("is-on");
+      send(form).then(function () {
+        document.getElementById("formOk").classList.add("is-on");
+      }, function () {
+        err.classList.add("is-on");
+        btn.disabled = false;
+      });
     });
-    if (!ok) return;
-    send(Object.fromEntries(new FormData(form))).then(function () {
-      document.getElementById("formOk").classList.add("is-on");
-      form.querySelector("[type=submit]").disabled = true;
-    });
-  });
+  }
 
   /* ---------- плашка записи на странице курса ---------- */
   var buybar = document.getElementById("buybar");

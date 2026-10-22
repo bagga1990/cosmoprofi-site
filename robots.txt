@@ -1,0 +1,18 @@
+User-agent: *
+Disallow: /api/
+Disallow: /_v1/
+Disallow: /_alt-bg/
+Disallow: /_alt-hero/
+Allow: /
+
+# ИИ-поиск: цитирование в ChatGPT Search, Claude, Perplexity
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://cosmoprofiacademy.ru/sitemap.xml

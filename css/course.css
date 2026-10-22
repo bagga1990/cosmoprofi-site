@@ -166,7 +166,7 @@
 .dstep .small { color: var(--ink-3); font-size: 1.05rem; }
 .dstep h3 { margin-top: auto; font-size: 1.7rem; letter-spacing: -0.02em; line-height: 1.2; }
 .dstep p { font-size: 1.15rem; color: var(--ink-2); }
-.dstep--accent { background: var(--tint-rose); }
+.dstep--accent { background: var(--tint-sand); }
 .nopractice { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2.4rem; margin-top: var(--gap); padding: 2rem 2rem 2rem 2.4rem; border-radius: var(--r); background: var(--ink); color: #fff; }
 .nopractice b { display: block; font-family: var(--f-display); font-weight: 500; font-size: 1.9rem; letter-spacing: -0.02em; margin-bottom: .6rem; }
 .nopractice p { font-size: 1.25rem; color: #BDB6AD; max-width: 64rem; }

@@ -60,7 +60,7 @@
   var accs = document.querySelectorAll(".acc");
   var fmtImgs = document.querySelectorAll("#fmtMedia img");
   var fmtLabel = document.getElementById("fmtLabel");
-  var LABELS = ["01 · Очно", "02 · Дистанционно", "03 · На вашем аппарате"];
+  var LABELS = ["01 · Очно", "02 · Дистанционно", "03 · Онлайн на аппарате"];
   accs.forEach(function (acc) {
     acc.querySelector(".acc__btn").addEventListener("click", function () {
       var i = +acc.dataset.i;

@@ -22,6 +22,8 @@ a.pkg__name:hover { text-decoration-color: var(--ink); }
 .pkg__opts { list-style: none; margin: .4rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .2rem; }
 .pkg__opts li { font-size: 1.15rem; color: var(--ink-2); display: flex; gap: .8rem; }
 .pkg__opts li::before { content: "—"; color: var(--ink-3); }
+.pkg__opts a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .3rem; transition: text-decoration-color .2s; }
+.pkg__opts a:hover { text-decoration-color: var(--ink); }
 .pkg__foot { margin-top: auto; display: flex; flex-direction: column; gap: 1.2rem; padding-top: 1.6rem; border-top: 1px solid var(--line); }
 .pkg__price { display: flex; align-items: baseline; flex-wrap: wrap; gap: .4rem 1.2rem; }
 .pkg__price b { font-family: var(--f-display); font-weight: 500; font-size: 3.4rem; letter-spacing: -0.04em; line-height: 1; }

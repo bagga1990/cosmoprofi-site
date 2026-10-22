@@ -26,7 +26,7 @@
 .chero__media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 1.6s var(--ease); }
 .is-loaded .chero__media > img { transform: none; }
 /* фото начинается на той же высоте, что и на главной: крошки уходят в левую колонку */
-@media (min-width: 1280px) { .chero { padding-top: 2rem; } .chero .crumbs { grid-column: 1 / span 6 !important; grid-row: 1; padding-top: 0; } .chero__text { grid-row: 2; } .chero__media { grid-row: 1 / span 2; } }
+@media (min-width: 1280px) { .chero { padding-top: 2rem; } .chero > .grid { grid-template-rows: auto 1fr; } .chero .crumbs { grid-column: 1 / span 6 !important; grid-row: 1; padding-top: 0; } .chero__text { grid-row: 2; } .chero__media { grid-row: 1 / span 2; } }
 .chero__teacher img { width: 3rem; height: 3rem; border-radius: 50%; object-fit: cover; object-position: 50% 20%; }
 @media (max-width: 1279px) { .chero__text, .chero__media { grid-column: 1 / -1; } .chero__media { height: 56rem; margin-top: 3.2rem; } .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 767px) { .chero h1 { font-size: 3.6rem; } .chero__media { height: 44rem; } .chero__cta, .chero__cta .btn { width: 100%; justify-content: center; } .price b { font-size: 2.8rem; } }

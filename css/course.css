@@ -22,12 +22,12 @@
 .price b { font-family: var(--f-display); font-weight: 500; font-size: 3.2rem; letter-spacing: -0.035em; line-height: 1; }
 .price span { font-size: 1.1rem; color: var(--ink-2); margin-top: .4rem; }
 .chero__cta { display: flex; gap: .6rem; flex-wrap: wrap; }
-.chero__media { grid-column: 7 / -1; position: relative; border-radius: var(--r); overflow: hidden; min-height: 58rem; background: var(--tint-sand); }
+.chero__media { grid-column: 7 / -1; position: relative; border-radius: var(--r); overflow: hidden; height: 63rem; align-self: start; background: var(--tint-sand); }
 .chero__media > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 1.6s var(--ease); }
 .is-loaded .chero__media > img { transform: none; }
 .chero__teacher img { width: 3rem; height: 3rem; border-radius: 50%; object-fit: cover; object-position: 50% 20%; }
-@media (max-width: 1279px) { .chero__text, .chero__media { grid-column: 1 / -1; } .chero__media { min-height: 48rem; margin-top: 3.2rem; } .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 767px) { .chero h1 { font-size: 3.6rem; } .chero__media { min-height: 36rem; } .chero__cta, .chero__cta .btn { width: 100%; justify-content: center; } .price b { font-size: 2.8rem; } }
+@media (max-width: 1279px) { .chero__text, .chero__media { grid-column: 1 / -1; } .chero__media { height: 56rem; margin-top: 3.2rem; } .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 767px) { .chero h1 { font-size: 3.6rem; } .chero__media { height: 44rem; } .chero__cta, .chero__cta .btn { width: 100%; justify-content: center; } .price b { font-size: 2.8rem; } }
 
 /* ---------- кому подходит ---------- */
 .fit { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }

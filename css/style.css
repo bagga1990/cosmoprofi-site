@@ -211,6 +211,23 @@ h1, h2, h3 { font-family: var(--f-display); font-weight: 500; letter-spacing: -0
 }
 
 /* ---------- форматы: фото + аккордеон ---------- */
+/* Полоса доверия под первым экраном */
+.trust { padding: 1.2rem 0 0; }
+.trust__box { grid-column: 1 / -1; display: grid; grid-template-columns: 1.1fr repeat(4, minmax(0, 1fr)); gap: .6rem; padding: .6rem; border-radius: var(--r); background: var(--ink); color: #fff; }
+.trust__lead { display: flex; flex-direction: column; justify-content: space-between; gap: 2rem; padding: 2rem 2rem 2.2rem; }
+.trust__lead .kicker { color: #BDB6AD; }
+.trust__lead b { display: block; font-size: 5.6rem; line-height: .95; letter-spacing: -0.04em; font-weight: 400; }
+.trust__lead span { display: block; margin-top: .8rem; font-size: 1.25rem; color: #BDB6AD; }
+.trust__item { display: flex; flex-direction: column; gap: .8rem; min-height: 21rem; padding: 2rem; border-radius: calc(var(--r) - .6rem); background: #2A2723; }
+.trust__ic { width: 3.6rem; height: 3.6rem; border-radius: 50%; background: #3A3631; display: grid; place-items: center; color: var(--copper-soft); }
+.trust__ic svg { width: 1.6rem; height: 1.6rem; }
+.trust__item h3 { margin-top: auto; font-size: 1.6rem; line-height: 1.2; letter-spacing: -0.01em; font-weight: 500; }
+.trust__item p { font-size: 1.15rem; line-height: 1.45; color: #BDB6AD; }
+.trust__item a { color: #fff; text-decoration: underline; text-decoration-color: #5A544D; text-underline-offset: .3rem; font-size: 1.15rem; }
+.trust__item a:hover { text-decoration-color: #fff; }
+@media (max-width: 1279px) { .trust__box { grid-template-columns: repeat(2, minmax(0, 1fr)); } .trust__lead { grid-column: 1 / -1; } .trust__item { min-height: 0; } }
+@media (max-width: 767px) { .trust__box { grid-template-columns: 1fr; } .trust__lead b { font-size: 4.8rem; } }
+
 .formats__media { grid-column: 1 / span 6; position: relative; border-radius: var(--r); overflow: hidden; min-height: 52rem; background: var(--tint-sand); }
 .formats__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .7s var(--ease), transform 1.2s var(--ease); transform: scale(1.03); }
 .formats__media img.is-on { opacity: 1; transform: none; }
